@@ -17,7 +17,7 @@ class Author(models.Model):
     class Meta:  #This for the admin panel, we want it ordered that way
         ordering =['last_name', 'first_name']
 
-    def get_absolute_urls(self): # This returns the url that access a particular author detail
+    def get_absolute_urls(self): # This returns the url that accesses a particular author's detail
         return reverse('author_detail', kwargs={"pk":self.pk})
     def __str__(self):
         return f"{self.last_name}, {self.first_name}"
@@ -39,7 +39,7 @@ class Book(models.Model):
     def __str__(self):
         return self.title
     
-    def get_absolute_urls(self):    
+    def get_absolute_url(self):    
         return reverse('book_detail', kwargs={"pk":self.pk})
     
 class BookInstance(models.Model):
