@@ -21,6 +21,6 @@ class BookCreate(CreateView): #CreateView automamtically looks for  'book_form.h
     model = Book
     fields = '__all__'
 
-class BookDetail(DetailView):
+class BookDetail(DetailView): # DetailView looks for a book_detail.html
     model = Book
 
